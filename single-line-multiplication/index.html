@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		
+
+
+
+		<script>
+			const multiplicationTable=(m,n)=>{
+			  var numbers = [], multipliers = [], count, obj = {}, str= "", largeStr = "";
+			  if(m < n){
+			    for(let i = m; i <= n; i++){
+			      numbers.push(i);
+			    }
+			    numbers.forEach(function(elem, index){
+			      count = elem;
+			      while(count > 0){
+			        multipliers.unshift(count);
+			        count--;
+			      }
+			      obj[elem] = multipliers;
+			      multipliers = [];
+			    });
+			    console.log(obj);
+			    for(let x in obj){
+			      for(let j = 0; j < obj[x].length; j++){
+			        if(j === obj[x].length - 1){
+			          str += obj[x][j] + ' * ' + (x*1) + ' = ' + (obj[x][j] * (x*1)) + "\n";
+			        }else{
+			          str += obj[x][j] + ' * ' + (x*1) + ' = ' + (obj[x][j] * (x*1)) + " ";  
+			        }
+			      }
+			      largeStr += str;
+			      str = "";
+			    }
+			    console.log(largeStr);
+			  }
+			  else if(m > n){
+			    for(let i = m; i >= n; i--){
+			      numbers.push(i);
+			    }
+			    console.log(numbers);
+			    numbers.forEach(function(elem, index){
+			      count = elem;
+			      while(count > 0){
+			        multipliers.unshift(count);
+			        count--;
+			      }
+			      obj[elem] = multipliers;
+			      multipliers = [];
+			    });
+			    
+			    console.log(obj);
+			    for(let x in obj){
+			      for(let j = 0; j < obj[x].length; j++){
+			        if(j === obj[x].length - 1){
+			          str += obj[x][j] + ' * ' + (x*1) + ' = ' + (obj[x][j] * (x*1)) + "\n";
+			        }else{
+			          str += obj[x][j] + ' * ' + (x*1) + ' = ' + (obj[x][j] * (x*1)) + " ";  
+			        }
+			      }
+			      largeStr += str;
+			      str = "";
+			    }
+			    console.log(largeStr);    
+			  }
+			  
+			};
+
+			multiplicationTable(3, 1);	
+
+			/*const multiplicationTable=(m,n)=>{var numbers = [], multipliers = [], count, obj = {}, str= "", largeStr = "";if(m < n){for(let i = m; i <= n; i++){numbers.push(i);}numbers.forEach(function(elem, index){count = elem;while(count > 0){multipliers.unshift(count);count--}obj[elem] = multipliers;multipliers = [];});for(let x in obj){for(let j = 0; j < obj[x].length; j++){if(j === obj[x].length - 1){str += obj[x][j] + ' * ' + (x*1) + ' = ' + (obj[x][j] * (x*1)) + "\n";}else{str += obj[x][j] + ' * ' + (x*1) + ' = ' + (obj[x][j] * (x*1)) + "  ";  }}largeStr += str;str = "";}return largeStr;}else if(m > n){for(let i = m; i >= n; i--){numbers.push(i);}numbers.forEach(function(elem, index){count = elem;while(count > 0){multipliers.unshift(count);count--;}obj[elem] = multipliers;multipliers = [];});for(let x = Object.keys(obj).length; x > 0; x--){for(let j = 0; j < obj[x].length; j++){if(j === obj[x].length - 1){str += obj[x][j] + ' * ' + (x*1) + ' = ' + (obj[x][j] * (x*1)) + "\n";}else{str += obj[x][j] + ' * ' + (x*1) + ' = ' + (obj[x][j] * (x*1)) + "  ";  }}largeStr += str;str = "";}return largeStr;    }else if(m === n){for(let i = 1; i <= m; i++){numbers.push(i);}numbers.forEach(function(elem, index){if(index === numbers.length - 1){str += elem + ' * ' + m + ' = ' + (elem * m) + "\n";}else{str += elem + ' * ' + m + ' = ' + (elem * m) + "  ";}});return str;}  };
+*/		
+		</script>
+	</body>
+</html>
